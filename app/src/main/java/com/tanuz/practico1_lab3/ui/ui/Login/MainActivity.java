@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btRegistrar= findViewById(R.id.btRegistrar);
         btIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 mv.autenticar(etEmail.getText().toString(),etPass.getText().toString());
                 etEmail.setText("");

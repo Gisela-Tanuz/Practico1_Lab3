@@ -46,7 +46,13 @@ private Usuario usuarioActual;
 
            }
        });
-      // rv.mostrar((Usuario) getIntent().getSerializableExtra("usuario"));
+       guardar.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               rv.registrar(Long.parseLong(dni.getText().toString()), apellido.getText().toString(), nombre.getText().toString(), email.getText().toString(), pass.getText().toString(), usuarioActual);
+           }
+       });
+
   rv.mostrar(usuarioActual);
     }
 
@@ -59,14 +65,6 @@ private Usuario usuarioActual;
         pass = findViewById(R.id.etPassword);
         mensaje = findViewById(R.id.tvMensaje);
         guardar = findViewById(R.id.btGuardar);
-
-          guardar.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  //rv.registrar(Long.valueOf(dni.getText().toString()), apellido.getText().toString(), nombre.getText().toString(), email.getText().toString(), pass.getText().toString());
-                  rv.registrar(Long.parseLong(dni.getText().toString()), apellido.getText().toString(), nombre.getText().toString(), email.getText().toString(), pass.getText().toString(), usuarioActual);
-              }
-          });
 
     }
     @Override
